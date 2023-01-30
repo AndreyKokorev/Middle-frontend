@@ -12,13 +12,14 @@
     // Компилятор будет обрабатывать не только TS файлы, но и JS файлы
     "allowJs": true,
     "moduleResolution": "node",
+    "baseUrl": ".",
     // esModuleInterop позволяет работать с пакетами, которые используют commonjs как с обычными пакетами с помощью импортов ES6
     // import moment from "moment"
     // без флага esModuleInterop результат undefined
     //  с флагом результат [object Object]
     "esModuleInterop": true,
     // allowSyntheticDefaultImports поддержка импорта по дефолту, иначе импорт через * as moment
-    "allowSyntheticDefaultImports": true,
+    "allowSyntheticDefaultImports": true
   },
   "ts-node": {
     "compilerOptions": {
