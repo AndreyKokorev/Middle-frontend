@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    // Собираем с помощью вебпак, потому параметр не важен в данном сборке
+    "outDir": "./dist/",
+    // Не позволяет использовать any
+    "noImplicitAny": true,
+    // Какую версию модульности
+    "module": "ESNext",
+    // В какую спецификацию будет компилируем: для поддержки большинства браузеров
+    "target": "es5",
+    "jsx": "react",
+    // Компилятор будет обрабатывать не только TS файлы, но и JS файлы
+    "allowJs": true,
+    "moduleResolution": "node",
+    // esModuleInterop позволяет работать с пакетами, которые используют commonjs как с обычными пакетами с помощью импортов ES6
+    // import moment from "moment"
+    // без флага esModuleInterop результат undefined
+    //  с флагом результат [object Object]
+    "esModuleInterop": true,
+    // allowSyntheticDefaultImports поддержка импорта по дефолту, иначе импорт через * as moment
+    "allowSyntheticDefaultImports": true,
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}
