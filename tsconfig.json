@@ -12,7 +12,7 @@
     // Компилятор будет обрабатывать не только TS файлы, но и JS файлы
     "allowJs": true,
     "moduleResolution": "node",
-    "baseUrl": ".",
+    //"baseUrl": ".",
     // esModuleInterop позволяет работать с пакетами, которые используют commonjs как с обычными пакетами с помощью импортов ES6
     // import moment from "moment"
     // без флага esModuleInterop результат undefined

@@ -1,3 +1,3 @@
 export default (number: number) => {
-  console.log('asfaf')
+  console.log(number)
 }
