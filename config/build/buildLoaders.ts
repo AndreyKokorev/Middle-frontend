@@ -1,13 +1,28 @@
 import webpack from "webpack"
 
 export function buildLoaders (): webpack.RuleSetRule[] {
+
+    // Если не используем тайпскрипт - нужен babel
     const tsLoader =  {
-        test: /\.tsx?$/, // Файлы которые нужно пропустить через лоадер. В данном случае ts и tsx
-        use: 'ts-loader', // Какой лоадер будет использоваться
+        test: /\.tsx?$/,
+        use: 'ts-loader',
         exclude: /node_modules/,
+    }
+
+    const cssLoaders = {
+        test: /\.s[ac]ss$/i,
+        use: [
+            // Creates `style` nodes from JS strings
+            "style-loader",
+            // Translates CSS into CommonJS
+            "css-loader",
+            // Compiles Sass to CSS
+            "sass-loader",
+        ],
     }
 
     return [
         tsLoader,
+        cssLoaders,
     ]
 }
