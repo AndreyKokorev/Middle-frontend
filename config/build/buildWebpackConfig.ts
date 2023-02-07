@@ -29,6 +29,6 @@ export function buildWebpackConfig (options: BuildOptions) {
             // Лоадеры нужны для обработки файлов, которые выходят за рамки js: ts, jpeg ..,
             rules: buildLoaders(options)
         },
-        resolve: buildResolvers(),
+        resolve: buildResolvers(options),
     }
 }

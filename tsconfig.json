@@ -13,6 +13,9 @@
     "allowJs": true,
     "moduleResolution": "node",
     //"baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+    },
     // esModuleInterop позволяет работать с пакетами, которые используют commonjs как с обычными пакетами с помощью импортов ES6
     // import moment from "moment"
     // без флага esModuleInterop результат undefined
