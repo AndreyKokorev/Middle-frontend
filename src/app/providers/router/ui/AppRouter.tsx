@@ -7,11 +7,19 @@ const AppRouter = () => {
         <Suspense fallback={<div>...loading</div>} >
             <Routes>
                 {routeConfig.map(({ element, path}) =>(
-                    <Route path={path} element={element}/>
+                    <Route
+                        key={path}
+                        path={path}
+                        element={element}
+                    />
                 ))}
             </Routes>
         </Suspense>
     );
 };
+
+type A<T = {}> = {
+    [Property in keyof T]: T[Property]
+}
 
 export default AppRouter;
