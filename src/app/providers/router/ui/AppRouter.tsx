@@ -2,24 +2,24 @@ import React, {Suspense} from 'react';
 import {Route, Routes} from "react-router-dom";
 import {routeConfig} from "@/shared/config/routerConfig/routerConfig";
 
-const AppRouter = () => {
+export const AppRouter = () => {
     return (
-        <Suspense fallback={<div>...loading</div>} >
+        <Suspense fallback={<div>...loading 1</div>} >
             <Routes>
                 {routeConfig.map(({ element, path}) =>(
                     <Route
                         key={path}
                         path={path}
-                        element={element}
+                        element={(
+                            <Suspense fallback={<div>...Loading 2</div>}>
+                                <div className="page-wrapper">
+                                    {element}
+                                </div>
+                            </Suspense>
+                        )}
                     />
                 ))}
             </Routes>
         </Suspense>
     );
 };
-
-type A<T = {}> = {
-    [Property in keyof T]: T[Property]
-}
-
-export default AppRouter;
