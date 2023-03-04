@@ -8,39 +8,38 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 // for passing in lng and translations on init
 
 i18n
-    .use(Backend)
-    .use(LanguageDetector)
-    .use(initReactI18next)
-    .init({
-        //load: 'languageOnly',
-        fallbackLng: false,
-        debug: __IS_DEV__,
+  .use(Backend)
+  .use(LanguageDetector)
+  .use(initReactI18next)
+  .init({
+    // load: 'languageOnly',
+    fallbackLng: false,
+    debug: __IS_DEV__,
 
-        interpolation: {
-            escapeValue: false, // not needed for react as it escapes by default
-        },
-        // resources: {
-        //     en: {
-        //         translation: {
-        //             title: '41241rrrrr'
-        //         }
-        //     },
-        //     ru: {
-        //         translation: {
-        //             title: '412ffff'
-        //         }
-        //     }
-        //}
-        // react: {
-        //     wait: true,
-        // },
-        backend: {
-            loadPath: '/locales/{{lng}}/{{ns}}.json',
-            //addPath: '/public/locales/add/{{lng}}/{{ns}}',
+    interpolation: {
+      escapeValue: false, // not needed for react as it escapes by default
+    },
+    // resources: {
+    //     en: {
+    //         translation: {
+    //             title: '41241rrrrr'
+    //         }
+    //     },
+    //     ru: {
+    //         translation: {
+    //             title: '412ffff'
+    //         }
+    //     }
+    // }
+    // react: {
+    //     wait: true,
+    // },
+    backend: {
+      loadPath: '/locales/{{lng}}/{{ns}}.json',
+      // addPath: '/public/locales/add/{{lng}}/{{ns}}',
 
-        },
+    },
 
-    });
-
+  });
 
 export default i18n;
